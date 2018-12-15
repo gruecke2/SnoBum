@@ -1,12 +1,104 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SnoBum App</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylestheet" type="text/css" href="Assets/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Sno Bum</title>
+  </head>
+  <body>
+      <div class="shadow-lg">
+      <img src="Assets/Image/Sno Bum Small.PNG" width="800px" height="150px" class="shadow-lg">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+        <a class="navbar-brand" href="#">Snobum</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Profile<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Resorts
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Snowbird</a>
+                <a class="dropdown-item" href="#">Alta</a>
+                <a class="dropdown-item" href="#">Brighton</a>
+                <a class="dropdown-item" href="#">Solitude</a>
+                <a class="dropdown-item" href="#">Park City</a>
+                <a class="dropdown-item" href="#">Deer Valley</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      </div>  
+      
+      <style>
+          
+          body {
+              margin-left: 375px;
+              background-color: rgb(204, 253, 255);
+              width: 800px;
+          }
+          .navbar {
+              margin-bottom: 15px;
+          }
+                
+      </style>
+<style>
+  #map {
+    height: 400px;
+    width: 800px;
+  }
+  html, body {
+    height: 100%;
+    padding: 0;
+  }
+
+  .weather {
+      margin-top: 15px;
+  }
+
+</style>
+<div id="map"></div>
+<script>
+  var map;
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: -34.397, lng: 150.644},
+      zoom: 8
+    });
+  }
+</script>
+
+<div class="shadow-lg">
+    <div class="weather" style="width: 800px">
+         <ul class="list-group list-group-flush">
+            <li class="list-group-item">Monday Weather</li>
+            <li class="list-group-item">Tuesday Weather</li>
+            <li class="list-group-item">Wednesday Weather</li>
+        </ul>
+    </div>
+</div>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCP8LrH8BEilckAhCvu2FK6o0DIvUJsBRQ&callback=initMap" async defer></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
 </html>

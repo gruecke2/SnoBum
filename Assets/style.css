@@ -1,0 +1,27 @@
+
+.img {
+    margin-bottom: 15px;
+}
+
+.body {
+    background-color: rgb(164, 255, 255);
+    margin-left: 375px;
+    width: 800px;
+}
+
+#navbar {
+    margin-bottom: 15px;
+}
+
+
+#map {
+    height: 400px;
+    width: 800px;
+  }
+
+
+.weather {
+    width: 800px;
+    background-color: blue;
+    
+}
