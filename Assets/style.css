@@ -1,11 +1,6 @@
-
-.img {
-    margin-bottom: 15px;
-}
-
-.body {
-    background-color: rgb(164, 255, 255);
+body {
     margin-left: 375px;
+    background-color: rgb(204, 253, 255);
     width: 800px;
 }
 
@@ -13,15 +8,16 @@
     margin-bottom: 15px;
 }
 
+#image {
+    margin-bottom: 15px;
+}
 
 #map {
     height: 400px;
     width: 800px;
-  }
-
+}
 
 .weather {
     width: 800px;
     background-color: blue;
-    
 }
