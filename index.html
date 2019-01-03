@@ -1,12 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SnoBum App</title>
+    <title>SnoBum</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 </head>
+<style>
+
+    html, 
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+}
+    #logo {
+  border: 1px solid #ddd; 
+  border-radius: 4px;  
+  padding: 1px; 
+  width: 50px; 
+}
+#logo:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.carousel-inner > .item > img {
+ width: 100%;
+ height: 400px;
+ max-height: 400px;
+}
+p {
+    font-family: cursive;
+    font-size: auto;
+    font-weight: bold;
+}
+h1, h2{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+}
+
+h2 {
+    padding-top: 1px;
+}
+
+h1 {
+    text-align: center;
+}
+#logo2 {
+    width: 100%;
+}
+
+
+@media screen and (min-width: 400px) {
+    #logo2 {
+      padding-top: 0px;
+      padding-bottom: 10px;
+    }
+    #UTAMap {
+      padding-top: 0px;
+      padding-bottom: 10px;
+    }
+
+    #day1, #day2, #day3, #day4, #day5, #day6, #day7, #day8, #day9, #day10 {
+        padding: 20px;
+        justify-content: center;
+    }
+
+}
+
+</style>
+
 <body>
-    
-</body>
+
+
+    <body>
+        <!--Navbar-->
+        <div class="container-fullwidth">
+            <nav class="navbar navbar-default fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+
+                        <!--toggle when screen is small/mobile-->
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1"
+                            aria-expanded="false">
+                            <!--ARIA: Accessible Rich Internet Applications-->
+                            <!--screen reader-->
+                            <span class="sr-only"></span>
+
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <!--THUMBNAIL LOGO - needed? or no?-->
+                        <a class="pull-right" href="#"><img id="logo" src="images/Sno Bum.png"></a>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+                            <li><a href="#">Weather </a></li>
+                            <li><a href="#">Transit Map </a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Resort Maps
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li role="seperator" class="dropdown-header">Big Cottonwood Canyon</li>
+                                    <li><a href="#">Brighton</a></li>
+                                    <li><a href="#">Solitude</a></li>
+                                    <li role="seperator" class="dropdown-header">Little Cottonwood Canyon</li>
+                                    <li><a href="#">Snowbird</a></li>
+                                    <li><a href="#">Alta*</a></li>
+                                    <li role="seperator" class="dropdown-header">Parley's Canyon</li>
+                                    <li><a href="#">Park City Mountain Resort</a></li>
+                                    <li><a href="#">Deer Valley*</a></li>
+                                    <!-- <li role="seperator" class="dropdown-header">Provo Canyon</li>
+                                    <li><a href="#">Sundance</a></li> -->
+                                </ul>
+                            </li>
+                        </ul>
+                        <!--Hide at medium and small-->
+                        <!--Make font SIZE responsive-->
+                        <p class="nav navbar-text">Need a ride? We can help get your SnoBum to the slopes!</p>
+                        <form class="navbar-form navbar-right" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                            <button type="submit" class="btn btn-default">Go</button>
+
+                        </form>
+
+                    </div>
+                </div>
+
+            </nav>
+        </div>
+
+        <!--Main Content-->
+        <div class="carousel container-fluid">
+            <div class="row">
+                <div class="col-lg-5 col-md-5 col-sm-12">
+                    <img src="images/image.png" id="logo2" alt="logoFont" />
+                    <!--Insert MAP/Transit API-->
+                    <img src="images/mapStandIn.jpg" id="UTAMap" class="img-responsive" alt="UTAMap" />
+
+
+                </div>
+
+
+                <!--Carousel-->
+                <!--Considering hiding the carousel when the frame is small - thoughts?-->
+                <!--Still working on photo quality/SIZING**-->
+                <div class="col-lg-7 col-md-7 col-sm-12">
+                    <div id="carousel-slider" class="carousel slide" data-ride="carousel">
+                        <!--indicators dot nav-->
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-slider" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-slider" data-slide-to="1"></li>
+                            <li data-target="#carousel-slider" data-slide-to="2"></li>
+                            <li data-target="#carousel-slider" data-slide-to="3"></li>
+                            <li data-target="#carousel-slider" data-slide-to="4"></li>
+                            <li data-target="#carousel-slider" data-slide-to="5"></li>
+                            <li data-target="#carousel-slider" data-slide-to="6"></li>
+                            <li data-target="#carousel-slider" data-slide-to="7"></li>
+                        </ol>
+
+                        <!--wrapper for slides-->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active img-responsive">
+                                <img src="images/map-lg.jpeg" alt="Map" />
+                            </div>
+                            <div class="item img-responsive">
+                                <img src="images/UTA.jpg" alt="Transportation" />
+                            </div>
+                            <div class="item img-responsive">
+                                <img src="images/Snowbird.jpg" alt="Snowbird" />
+                            </div>
+                            <div class="item img-responsive">
+                                <img src="images/slide3.jpg" alt="Skier" />
+                            </div>
+                            <div class="item img-responsive">
+                                <img src="images/cat.jpg" alt="Snowcat" />
+                            </div>
+                            <div class="item img-responsive">
+                                <img src="images/jump.jpg" alt="Snowboarder" />
+                            </div>
+                            <div class="item img-responsive">
+                                <img src="images/powRed.jpg" alt="Powder" />
+                            </div>
+                            <div class="item img-responsive">
+                                <img src="images/heli.jpg" alt="Helicopter" />
+                            </div>
+                        </div>
+
+                        <!--navigation-->
+                        <a class="left carousel-control" href="#carousel-slider" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-slider" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+
+                    </div>
+                    <!--Resort Destination and Arrival Time : data boxes-->
+                    <div class="container">
+                        <div class="row">
+                            <h2>
+                                Destination:
+                                <select>
+                                    <option>Brighton</option>
+                                    <option>Solitude</option>
+                                    <option>Snowbird</option>
+                                    <option>Alta (ski only)</option>
+                                    <option>Park City Mountain</option>
+                                    <option>Deer Valley (ski only)</option>
+                                </select>
+                            </h2>
+                        </div>
+
+                        <!--Time Input : data box-->
+                        <div class="row">
+                            <h2>Arrival Time: <input type="text" id="Time"></h2>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--Weather/repeating element-->
+            <div class="container-fluid">
+                <div class="row" id="forecast">
+                    <h1>********** 10 Day Forecast - Header needed********</h1>
+                    <!--in same font as SnoBum logo as image to span entire page-->
+                    <div class="col-lg-1 col-md-1"></div>
+
+                    <div class="col-lg-2 col-md-2 col-sm-6">
+                        <img class="img-responsive" id="day1" src="images/f.png" alt="Day1" /> Day1-placeholder
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-6">
+                        <img class="img-responsive" id="day2" src="images/flake.jpeg" alt="Day2" />Day2
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-6">
+                        <img class="img-responsive" id="day3" src="images/f.png" alt="Day3" />Day3
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-6">
+                        <img class="img-responsive" id="day4" src="images/flake.jpeg" alt="Day4" />Day4
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-6">
+                        <img class="img-responsive" id="day5" src="images/f.png" alt="Day5" />Day5
+                    </div>
+                    <!--I have the forecast in 2 rows, but then when the screen size gets smaller they still stay seperate...please help?-->
+                    <!-- <div class="clearfix visible-sm"></div> -->
+                </div>
+                <div class="row" id="forecast2">
+                    <div class="col-lg-1 col-md-1"></div>
+                    <div class="col-lg-2 col-md-2 col-sm-6">
+
+                        <img class="img-responsive" id="day6" src="images/flake.jpeg" alt="Day1" /> Day6
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-6">
+                        <img class="img-responsive" id="day7" src="images/f.png" alt="Day2" />Day7
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-6">
+                        <img class="img-responsive" id="day8" src="images/flake.jpeg" alt="Day3" />Day8
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-6">
+                        <img class="img-responsive" id="day9" src="images/f.png" alt="Day4" />Day9
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-6">
+                        <img class="img-responsive" id="day10" src="images/flake.jpeg" alt="Day5" />Day10
+                    </div>
+                    <div class="col-lg-1 col-md-1"></div>
+                    <div class="col-lg-1 col-md-1"></div>
+                </div>
+            </div>
+
+            <br><br>
+            <!--Footer-->
+            <!--still working to have a form and textbox to submit email address or something?-->
+            <footer class="page-footer font-medium gray fixed-bottom">
+                <div class="footer-copyright text-center py-3">© 2019 Copyright: SnoBum
+                </div>
+            </footer>
+
+
+
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+                crossorigin="anonymous"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    </body>
+    <!--js for destination selection?-->
+    <script type="text/javascript"></script>
+
 </html>
+
+<!--web browser icon-->
+<!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff"> -->
