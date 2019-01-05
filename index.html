@@ -20,9 +20,12 @@
     />
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Condiment" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
@@ -39,43 +42,33 @@
 
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">
+      <div class="navbar-brand" href="#">
         <img src="assets/images/carousel_images/Sno Bum.png" alt="little-logo" id="little-logo"
          width="60" height="60">
-      </a>
+      </div>
       <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
           aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="collapsibleNavId">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="resorts-select" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resorts</a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownId">
-                <li role="seperator" class="dropdown-header">Big Cottonwood Canyon</li>
-                <li>
-                  <a href="#" id="brighton">Brighton</a><span><img src="assets/images/brighton-logo.png" alt="brtn" class="resort-small"></span>
-                </li>
-                <li>
-                  <a href="#" id="solitude">Solitude</a><span><img src="assets/images/solitude-logo.png" alt="sltd" class="resort-small"></span>
-                </li>
-                <li role="seperator" class="dropdown-header">Little Cottonwood Canyon</li>
-                <li>
-                  <a href="#" id="snowbird">Snowbird</a><span><img src="assets/images/snowbird-logo.png" alt="snwbrd" class="resort-small"></span>
-                </li>
-                <li>
-                  <a href="#" id="alta">Alta*</a><span><img src="assets/images/Alta_Logo.png" alt="alta" class="resort-small"></span>
-                </li>
-                <li role="seperator" class="dropdown-header">Parley's Canyon</li>
-                <li>
-                  <a href="#" id="park-city">Park City Mountain Resort</a><span><img src="assets/images/park-city-logo.png" alt="prkcity" class="resort-small"></span>
-                </li>
-                <li>
-                  <a href="#" id="deer-valley">Deer Valley*</a><span><img src="assets/images/deer-valley-resort-logo.png" alt="deerval" class="resort-small"></span>
-                </li>
-            </ul>
-          </li>
-        </ul>
+        <div class="dropdown">
+          <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+                Resorts
+              </button>
+          <div class="dropdown-menu" aria-labelledby="triggerId">
+              <div role="seperator" class="dropdown-header">Big Cottonwood Canyon</div>
+              <a href="#" class="dropdown-item"id="brighton"><span><img src="assets/images/brighton-logo.png" alt="brtn" class="resort-small"></span></a>
+              <a href="#" class="dropdown-item"id="solitude"><span><img src="assets/images/solitude-logo.png" alt="sltd" class="resort-small"></span></a>
+              <div role="seperator" class="dropdown-header">Little Cottonwood Canyon</div>
+              <a href="#" class="dropdown-item"id="snowbird"><span><img src="assets/images/snowbird-logo.png" alt="snwbrd" class="resort-small"></span></a>
+              <a href="#" class="dropdown-item"id="alta"><span><img src="assets/images/Alta_Logo.png" alt="alta" class="resort-small"></span></a>
+              <div role="seperator" class="dropdown-header">Parley's Canyon</div>
+              <a href="#" class="dropdown-item"id="park-city"><span><img src="assets/images/park-city-logo.png" alt="prkcity" class="resort-small"></span></a>
+              <a href="#" class="dropdown-item"id="deer-valley"><span><img src="assets/images/deer-valley-resort-logo.png" alt="deerval" class="resort-small"></span></a>
+          </div>
+        </div>
+        <p class="navbar-text" id="small-message">Need a ride? We can help get your SnoBum to the slopes! </p>
       </div>
     </nav>
 
@@ -152,103 +145,31 @@
       </div>
 
       <!--Weather/repeating element-->
+      <div class="container"> 
         <div class="row" id="forecast">
-          <h1>********** 10 Day Forecast - Header needed********</h1>
           <!--in same font as SnoBum logo as image to span entire page-->
-          <div class="col-lg-1 col-md-1"></div>
-
-          <!-- <div class="col-lg-2 col-md-2 col-sm-6">
-            <img
-              class="img-fluid"
-              id="day1"
-              src="images/f.png"
-              alt="Day1"
-            />
-            Day1-placeholder
+          <div class="col-lg-12 col-md-12"></div>
+            <img src="assets/images/Forecast Orange.PNG" alt="forecast" width="100%">
+        </div>
+        <div class="row">
+          <div class="col-lg-12 col-md-12">
+            <div class="card bg-light" border-color:darkblue;">
+              <img class="card-img-top" id="weather-icon" src="assets/images/Sno Bum Small.PNG" alt="weather-icon">
+              <div class="card-body">
+                <h4 class="card-title" id="weather-head">Weather Information</h4>
+                <p class="card-text" id="start-weather">Load a resort to see the weather!</p>
+                <div id="description"></div>
+                <div id="current-temp"></div>
+                <div id="max-min"></div>
+                <div id="humidity"></div>
+                <div id="wind"></div>
+              </div>
+            </div>
           </div>
-          <div class="col-lg-2 col-md-2 col-sm-6">
-            <img
-              class="img-fluid"
-              id="day2"
-              src="images/flake.jpeg"
-              alt="Day2"
-            />Day2
-          </div>
-          <div class="col-lg-2 col-md-2 col-sm-6">
-            <img
-              class="img-fluid"
-              id="day3"
-              src="images/f.png"
-              alt="Day3"
-            />Day3
-          </div>
-          <div class="col-lg-2 col-md-2 col-sm-6">
-            <img
-              class="img-fluid"
-              id="day4"
-              src="images/flake.jpeg"
-              alt="Day4"
-            />Day4
-          </div>
-          <div class="col-lg-2 col-md-2 col-sm-6">
-            <img
-              class="img-fluid"
-              id="day5"
-              src="images/f.png"
-              alt="Day5"
-            />Day5 -->
-          
-          <!--I have the forecast in 2 rows, but then when the screen size gets smaller they still stay seperate...please help?-->
-          <!-- <div class="clearfix visible-sm"></div> -->
-        <!-- </div>
-        <div class="row" id="forecast2">
-          <div class="col-lg-1 col-md-1"></div>
-          <div class="col-lg-2 col-md-2 col-sm-6">
-            <img
-              class="img-fluid"
-              id="day6"
-              src="images/flake.jpeg"
-              alt="Day1"
-            />
-            Day6
-          </div>
-          <div class="col-lg-2 col-md-2 col-sm-6">
-            <img
-              class="img-fluid"
-              id="day7"
-              src="images/f.png"
-              alt="Day2"
-            />Day7
-          </div>
-          <div class="col-lg-2 col-md-2 col-sm-6">
-            <img
-              class="img-fluid"
-              id="day8"
-              src="images/flake.jpeg"
-              alt="Day3"
-            />Day8
-          </div>
-          <div class="col-lg-2 col-md-2 col-sm-6">
-            <img
-              class="img-fluid"
-              id="day9"
-              src="images/f.png"
-              alt="Day4"
-            />Day9
-          </div>
-          <div class="col-lg-2 col-md-2 col-sm-6">
-            <img
-              class="img-fluid"
-              id="day10"
-              src="images/flake.jpeg"
-              alt="Day5"
-            />Day10
-          </div>
-          <div class="col-lg-1 col-md-1"></div>
-          <div class="col-lg-1 col-md-1"></div> -->
         </div>
       </div>
     </div>
+  </div>
 
     <!-- Google Maps plugin -->
     <script>
@@ -336,10 +257,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     </script>
 
 
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCP8LrH8BEilckAhCvu2FK6o0DIvUJsBRQ&callback=initMap"
-      async
-      defer
-    ></script>
-  </body>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCP8LrH8BEilckAhCvu2FK6o0DIvUJsBRQ&callback=initMap" async defer></script>
+<script src="assets/js/weather.js"></script>  
+</body>
 </html>

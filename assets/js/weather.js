@@ -3,6 +3,9 @@
 var weatherDiv = $(this).attr("data-name");
 var apiKey = "ba122f6f24a75e9797130a923242d144";
 
+var resort = "";
+
+//#region 
 
 
 function getWeather(search){
@@ -15,10 +18,11 @@ function getWeather(search){
 
       console.log(response);
   
-        $(".city").html("<h1>" + response.name + " Weather Details</h1>");
-        $(".wind").text("Wind Speed: " + response.wind.speed);
-        $(".description").text("Current Conditions: " + response.weather[0].description);
-        $(".temp").text("Temperature (F) " + response.main.temp);
+        $("#weather-head").html("<h4>Weather Information for " + response.name + " </h4>");
+        $("#description").text("Current Conditions: " + response.weather[0].description);
+        $("#current-temp").text("Temperature: " + response.main.temp + "(F)");
+        $("#wind").text("Wind Speed: " + response.wind.speed + "mph");
+        $("#max-min").text("Hi: " + response.main.temp_max + " Lo: " + response.main.temp_min);
   
       });
 }
@@ -46,3 +50,8 @@ $("#deer-valley").on("click", function(){
 $("#solitude").on("click", function(){
   getWeather("lat=40.6211&lon=-111.5933");
 })
+
+//#endregion
+
+
+
