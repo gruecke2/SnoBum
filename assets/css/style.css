@@ -16,8 +16,14 @@ canvas{
     /* vertical-align: bottom; */
 }
 
+.navbar{
+    margin-bottom: 1%;
+
+}
+
 #logo-head{
     width: 100%;
+    
 }
 
 .resort-small{
@@ -82,11 +88,11 @@ h1 {
 @media screen and (min-width: 400px) {
     #logo2 {
       padding-top: 0px;
-      padding-bottom: 10px;
+      padding-bottom: 2%;
     }
     #map {
       padding-top: 0px;
-      padding-bottom: 10px;
+      padding-bottom: 2%;
     }
 }
 
