@@ -7,7 +7,6 @@ var resort = "";
 
 //#region 
 
-
 function getWeather(search){
   var queryURL = "https://api.openweathermap.org/data/2.5/weather?"+ search + "&units=imperial&APPID=" + apiKey;
 
@@ -19,10 +18,12 @@ function getWeather(search){
       console.log(response);
   
         $("#weather-head").html("<h4>Weather Information for " + response.name + " </h4>");
-        $("#description").text("Current Conditions: " + response.weather[0].description);
-        $("#current-temp").text("Temperature: " + response.main.temp + "(F)");
-        $("#wind").text("Wind Speed: " + response.wind.speed + "mph");
-        $("#max-min").text("Hi: " + response.main.temp_max + " Lo: " + response.main.temp_min);
+        $("#description").html("<strong>Current Conditions:</strong> " + response.weather[0].main +
+         " " + "<img src='http://openweathermap.org/img/w/" + response.weather[0].icon +".png'>");
+
+        $("#current-temp").html("<strong>Temperature:</strong> " + response.main.temp + "&deg; F");
+        $("#wind").html("<strong>Wind Speed:</strong> " + response.wind.speed + "mph");
+        $("#max-min").html("<strong>Hi:</strong> " + response.main.temp_max + " <strong>Lo:</strong> " + response.main.temp_min);
   
       });
 }
